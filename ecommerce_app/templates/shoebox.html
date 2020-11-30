@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoebox</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/shoebox.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to { users.first_name }'s Shoebox</h1>
+            <div class="navi">
+                <a href="/cop">Cop</a>
+                <a href="/flip">Flip</a>
+                <a href="/myshoebox">My Shoebox</a>
+                <a href="/shoebox">Shoebox</a>
+            </div>
+            <a href="/logout"><button type = "button">Logout</button></a>
+        </div>
+        <div class="shoeboxes">
+            { shoe.uploaded_by.all}
+        </div>
+    </div>
+</body>
+</html>

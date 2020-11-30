@@ -1,0 +1,42 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.container {
+    padding: 10px;
+}
+.header {
+    text-align: center;
+    font-weight: bolder;
+    height: 100px;
+    background-color: rgb(204, 81, 62);
+}
+    .header h1 {
+        color: white;
+    }
+.middle {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 25px;
+}
+    .register {
+        color: white;
+    }
+        #first_name {
+            margin-left: 50px;
+        }
+    .login {
+        color: white;   
+    }
+
+    fieldset {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+.error_message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}

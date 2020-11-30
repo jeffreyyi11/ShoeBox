@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuss</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/discuss.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Sneaker News</h1>
+            <div class="navi">
+                <a href="/cop">Cop</a>
+                <a href="/flip">Flip</a>
+                <a href="/myshoebox">My Shoebox</a>
+                <a href="/shoebox">Shoebox</a>
+            </div>
+            <a href="/logout"><button type = "button">Logout</button></a>
+        </div>
+        <div class="news">
+            { shoe.img }
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget est fringilla, ornare tellus ac, interdum felis. Phasellus cursus consectetur erat at tempor. Sed est quam, molestie sed turpis id, facilisis dictum enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer condimentum et augue ut dignissim. Sed nisi ipsum, suscipit eget elementum et, molestie ut libero. Cras egestas tellus ac quam imperdiet ornare. Maecenas varius facilisis risus, nec fermentum dolor mattis ullamcorper. Sed interdum vitae augue ac fermentum. Nunc in sapien rutrum odio dignissim condimentum. Aenean ultrices urna nunc, at dictum lacus commodo id. Vivamus gravida lacus magna, euismod bibendum libero aliquam sed. In eu mattis enim, sit amet ornare odio. Pellentesque ut euismod nibh, sit amet euismod purus.</p>
+        </div>
+    </div>
+</body>
+</html>

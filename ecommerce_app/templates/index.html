@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The Shoebox</h1>
+        </div>
+        <div class = "middle">
+            <div class="register">
+                <h2>New Account</h2>
+                <form action = '/register' method = "POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend></legend>
+                        <label for="first_name">First name:</label>
+                        <input type="text" id="first_name" name="first_name"><br><br>
+                        <label for="last_name">Last name:</label>
+                        <input type="text" id="lname" name="last_name"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password"><br><br>
+                        <label for="confirm">Confirm Password:</label>
+                        <input type="password" id="confirm" name="confirm"><br><br>
+                        <button type="submit">Register</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login">
+                <h2>Login</h2>
+                <form action = "/login" method = "POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend></legend>
+                        <label for="confirm_email">Email:</label>
+                        <input type="email" id="confirm_email"name="confirm_email"><br><br>
+                        <label for="confirm_pw">Password:</label>
+                        <input type="password" id="confirm_pw" name="confirm_pw"><br><br>
+                        <button type="submit">Login</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="error_message">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

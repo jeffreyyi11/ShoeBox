@@ -1,0 +1,75 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    padding: 10px;
+    min-height: 200px;
+    background-image: linear-gradient(rgb(216,197,116),rgb(176,161,96),rgb(72,73,80),rgb(71,51,53),rgb(6,72,133),rgb(12,11,80), rgb(37,47,50), rgb(28,15,12));
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    color: white;
+}
+    .header h1 {
+        margin-left: 15px;
+    }
+    .header button {
+        border-radius: 3px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 2px;
+    }
+    .header a {
+        margin: 5px 2px 2px 0px;
+    }
+
+.sell form{
+    width: 400px;
+    margin: 0px auto;
+    color: white;
+    margin-top: 15px;
+}
+.sell fieldset {
+    padding: 10px;
+}
+    fieldset #brand {
+        width: 200px;
+        margin-left: 106px;
+    }
+    fieldset #name {
+        width: 200px; 
+        margin-left: 107px;
+    }
+    fieldset #size {
+        width: 200px;
+        margin-left: 116px;
+    }
+    fieldset #price {
+        width: 200px;
+        margin-left: 110px;
+    }
+    fieldset #desc {
+        width: 200px;
+        height: 100px;
+        margin-left: 70px;
+    }
+    fieldset button {
+        margin-top: 5px;
+        margin-left: 310px;  
+    }
+
+.error_message {
+    display: grid;
+    place-items: center;
+    color: white;
+    margin-top: 10px;
+}
+    .error_message li{
+        list-style: none;
+    }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ user.first_name }}'s Shoebox</h1>
+            <div class="navi">
+                <a href="/cop">Cop</a>
+                <a href="/flip">Flip</a>
+                <a href="/discuss">Discuss</a>
+                <a href="/shoebox">Shoebox</a>
+            </div>
+            <a href="/logout"><button type = "button">Logout</button></a>
+        </div>
+        <div class="shoe_list">
+            <div class="upload_shoes">
+                <form action = "/upload_shoe" method = "POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Post Shoe</legend>
+                        <label for="brand">Brand:</label>
+                        <input type="text" id="brand" name="brand"><br><br>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name"name="name"><br><br>
+                        <label for="size">Size:</label>
+                        <input type="number" step="0.5" min="0.0" id="size" name="size"><br><br>
+                        <label for="desc">Description:</label>
+                        <textarea id="desc" name="desc"></textarea>
+                        <button type="submit">Submit</button>
+                    </fieldset>
+                </form>
+                <div class="error_message">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}<li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="my_shoes">
+                <ul>
+                    {% for shoe in user.shoes_owned.all %}
+                        <li id="start">Brand: {{ shoe.brand }}</li>
+                        <ul>
+                            <li>Name: {{ shoe.name }}</li>
+                            <li>Size: {{ shoe.size }}</li>
+                            <li>{{ shoe.desc }}</li>
+                            <div class = "shoe_options">
+                                {% if shoe.uploaded_by.id != user.id %}
+                                    {% if shoe.liked == False %}
+                                        <a href="/like/{{ shoe.id }}"><button id="end" type="button">Like</button><a>
+                                    {% else %}
+                                        <a href="/unlike/{{ shoe.id }}"><button type="button">Unlike</button></a>
+                                    {% endif %}
+                                {% endif %}
+                                <a href="/delete/{{ shoe.id }}"><button id = "delete" type = "button">Delete</button></a>
+                            </div>
+                        </ul>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.container {
+    padding: 10px;
+    background-color: aqua;
+    min-height: 200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+    .header h1 {
+        margin-left: 15px;
+    }
+    .header button {
+        border-radius: 3px;
+        margin-right: 10px;
+        margin-top: 10px;
+        padding: 2px;
+    }
+
+.upload_shoes {
+    margin-top: 10px;
+}
+
+    .upload_shoes fieldset {
+        width: 300px;
+        padding: 10px;
+    }
+        fieldset #brand {
+            width: 200px;
+            margin-left: 36px;
+        }
+        fieldset #name {
+            width: 200px; 
+            margin-left: 37px;
+        }
+        fieldset #size {
+            width: 200px;
+            margin-left: 46px;
+        }
+        fieldset #desc {
+            width: 200px;
+            height: 100px;
+        }
+        fieldset button {
+            margin-top: 5px;
+            margin-left: 240px;  
+        }
+
+.shoe_list {
+    display: flex;
+    justify-content: space-around;
+}
+    .my_shoes {
+        margin-top: 10px;
+        width: 300px;
+    }
+    .my_shoes ul {
+        list-style: none;
+    }
+    .my_shoes #start {
+        list-style-type: decimal;
+    }
+    .my_shoes #delete {
+        margin-bottom: 15px;
+    }
+
+.error_messages li {
+    margin-top: 10px;
+    list-style: none;
+}
+
